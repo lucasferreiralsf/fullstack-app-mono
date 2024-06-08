@@ -1,0 +1,6 @@
+packages:
+  # all packages in direct subdirs of packages/
+  - 'packages/*'
+  # all applications in direct subdirs of applications/
+  - 'apps/*'
+  - 'apps/*/*/*'

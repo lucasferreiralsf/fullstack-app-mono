@@ -1,0 +1,8 @@
+node_modules/
+*.min.js
+*.map
+*.snap
+**/*.sh
+commitlint.config.js
+dist
+lib

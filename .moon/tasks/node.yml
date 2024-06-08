@@ -1,0 +1,122 @@
+fileGroups:
+  sources:
+    - 'src/**/*'
+    - 'types/**/*'
+  tests:
+    - 'tests/**/*.test.*'
+    # NestJS default test folder
+    - 'test/**/*.*spec.*'
+    - '**/__tests__/**/*'
+
+tasks:
+  typecheck:
+    command:
+      - 'tsc'
+      # Use incremental builds with project references
+      - '--build'
+      # Always use pretty output
+      - '--pretty'
+      # Use verbose logging to see affected projects
+      - '--verbose'
+    inputs:
+      # Source and types declarations
+      - '@group(sources)'
+      # Test files
+      - '@group(tests)'
+      # Project configs
+      - 'tsconfig.json'
+      - 'tsconfig.*.json'
+      # Root configs (extended from only)
+      - '/tsconfig.options.json'
+    outputs:
+      # Matches `compilerOptions.outDir`
+      - 'lib'
+  lint:
+    command:
+      - 'eslint'
+      # Support other extensions
+      - '--ext'
+      - '.js,.jsx,.ts,.tsx'
+      # Always fix and run extra checks
+      - '--fix'
+      - '--report-unused-disable-directives'
+      # Dont fail if a project has nothing to lint
+      - '--no-error-on-unmatched-pattern'
+      # Do fail if we encounter a fatal error
+      - '--exit-on-fatal-error'
+      # Only 1 ignore file is supported, so use the root
+      - '--ignore-path'
+      - '@in(4)'
+      # Run in current dir
+      - '.'
+    inputs:
+      # Source and types declarations
+      # - '@group(sources)'
+      # # Test files
+      # - '@group(tests)'
+      - 'src/**/*'
+      # Test files
+      - '@group(tests)'
+      # Other config files
+      - '*.config.*'
+      # Project configs, any format, any depth
+      - '**/.eslintrc.*'
+      # Root configs, any format
+      - '/.eslintignore'
+      - '/.eslintrc.*'
+      # TypeScript support
+      - 'tsconfig.json'
+      - '/tsconfig.eslint.json'
+      - '/tsconfig.options.json'
+    options:
+      affectedFiles: true
+  format-check:
+    command:
+      - 'prettier'
+      # Use the same config for the entire repo
+      - '--config'
+      - '@in(4)'
+      # Use the same ignore patterns as well
+      - '--ignore-path'
+      - '@in(3)'
+      # Fail for unformatted code
+      - '--check'
+      # Run in current dir
+      - '.'
+    inputs:
+      # Source and test files
+      - 'src/**/*'
+      # Test files
+      - '@group(tests)'
+      # Config and other files
+      - '**/*.{md,mdx,yml,yaml,json}'
+      # Root configs, any format
+      - '/.prettierignore'
+      - '/.prettierrc'
+    options:
+      affectedFiles: true
+  format:
+    command:
+      - 'prettier'
+      # Use the same config for the entire repo
+      - '--config'
+      - '@in(4)'
+      # Use the same ignore patterns as well
+      - '--ignore-path'
+      - '@in(3)'
+      # Fail for unformatted code
+      - '--write'
+      # Run in current dir
+      - '.'
+    inputs:
+      # Source and test files
+      - 'src/**/*'
+      # Test files
+      - '@group(tests)'
+      # Config and other files
+      - '**/*.{md,mdx,yml,yaml,json}'
+      # Root configs, any format
+      - '/.prettierignore'
+      - '/.prettierrc'
+    options:
+      affectedFiles: true

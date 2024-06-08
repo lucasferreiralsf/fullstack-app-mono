@@ -1,0 +1,23 @@
+{
+	"extends": "../../tsconfig.options.json",
+	"compilerOptions": {
+		"rootDir": "./src",
+		"emitDeclarationOnly": true,
+		"outDir": "lib/mjs"
+	},
+
+	"exclude": [
+		"drizzle.config.ts",
+		"src/env.mts",
+		"src/migrate.mts",
+		"src/json-to-schema.ts",
+		"dist/**/*",
+		"lib/**/*"
+	],
+	"references": [
+		{
+			"path": "../utils"
+		}
+	],
+	"include": ["src/**/*"]
+}

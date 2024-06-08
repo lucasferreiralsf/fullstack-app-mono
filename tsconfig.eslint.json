@@ -1,0 +1,22 @@
+{
+	"extends": "./tsconfig.options.json",
+	"compilerOptions": {
+		"emitDeclarationOnly": false,
+		"noEmit": true
+	},
+	"parserOptions": {
+		"extraFileExtensions": [".mjs", ".cjs"]
+	},
+	"include": ["apps/**/*", "packages/**/*", "**/.eslintrc.js"],
+	"exclude": [
+		"**/.cache/**/*",
+		"**/.next/**/*",
+		"**/build/**/*",
+		"**/cjs/**/*",
+		"**/dist/**/*",
+		"**/esm/**/*",
+		"**/lib/**/*",
+		"**/mjs/**/*",
+		"**/node_modules/**/*"
+	]
+}

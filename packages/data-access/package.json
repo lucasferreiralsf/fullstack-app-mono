@@ -1,0 +1,27 @@
+{
+	"name": "@gymclub/data-access",
+	"version": "1.0.0",
+	"description": "",
+	"main": "lib/cjs/index.js",
+	"module": "lib/mjs/index.js",
+	"exports": {
+		".": {
+			"import": "./lib/mjs/index.js",
+			"require": "./lib/cjs/index.js"
+		}
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@gymclub/utils": "workspace:*",
+		"drizzle-kit": "^0.21.2",
+		"drizzle-orm": "^0.30.10",
+		"postgres": "^3.4.4",
+		"radash": "^12.1.0",
+		"zod": "^3.23.8"
+	},
+	"scripts": {
+		"build": "rm -fr lib/* && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && ./fixup"
+	}
+}

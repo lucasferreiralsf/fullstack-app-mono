@@ -1,0 +1,10 @@
+{
+	"extends": "../../tsconfig.options.json",
+	"include": ["drizzle.config.ts", "src/env.ts", "src/json-to-schema.mts"],
+	"exclude": ["dist/**/*", "lib/**/*"],
+	"references": [
+		{
+			"path": "../utils"
+		}
+	]
+}

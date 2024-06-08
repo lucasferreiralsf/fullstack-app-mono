@@ -1,0 +1,23 @@
+{
+	"name": "@gymclub/utils",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"main": "lib/cjs/index.js",
+	"module": "lib/mjs/index.js",
+	"exports": {
+		".": {
+			"import": "./lib/mjs/index.js",
+			"require": "./lib/cjs/index.js"
+		}
+	},
+	"scripts": {
+		"build": "rm -fr lib/* && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && ./fixup"
+	},
+	"dependencies": {
+		"dotenv": "^16.4.5",
+		"zod": "^3.23.8"
+	}
+}
