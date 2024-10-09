@@ -1,0 +1,1 @@
+ALTER TABLE "auth"."plan" ADD COLUMN "provider_product_id" text;

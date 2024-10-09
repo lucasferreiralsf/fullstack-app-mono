@@ -1,0 +1,41 @@
+{
+	"extends": "../../../tsconfig.options.json",
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"types": ["bun-types"],
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+		"emitDeclarationOnly": false,
+		"outDir": "../../../.moon/cache/types/apps/services/auth-api",
+		"paths": {
+			"@gymclub/auth-api/clients": ["./src/clients/index.ts"],
+			"@gymclub/auth-api/clients/*": ["./src/clients/*"],
+			"@gymclub/auth-api/utils": ["./src/utils/index.ts"],
+			"@gymclub/auth-api/utils/*": ["./src/utils/*"],
+			"@gymclub/auth-api/models": ["./src/models/index.ts"],
+			"@gymclub/auth-api/models/*": ["./src/models/*"],
+			"@gymclub/auth-api/services": ["./src/services/index.ts"],
+			"@gymclub/auth-api/services/*": ["./src/services/*"],
+			"@gymclub/db/*": ["../../../packages/db/src/*"],
+			"@gymclub/utils": ["../../../packages/utils/src/index.ts"],
+			"@gymclub/utils/*": ["../../../packages/utils/src/*"]
+		}
+	},
+	"exclude": [
+		"../../../packages/utils/lib/**/*",
+		"../../../packages/db/drizzle.config.ts"
+	],
+	"include": ["src/**/*", "tests/**/*"],
+	"references": [
+		{
+			"path": "../../../packages/db"
+		},
+		{
+			"path": "../../../packages/utils"
+		}
+	]
+}

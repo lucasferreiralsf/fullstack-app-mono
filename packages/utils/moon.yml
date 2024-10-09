@@ -4,36 +4,22 @@ language: typescript
 stack: backend
 platform: node
 
-toolchain:
-  typescript:
-    disabled: true
-
 project:
   name: 'utils'
   description: 'Gymclub utils package'
   channel: '#utils'
 
+toolchain:
+  typescript:
+    routeOutDirToCache: false
+
 tasks:
-  remove-build-files:
-    command: rm
-    args:
-      - '-fr=lib/*'
-    options:
-      internal: true
   typecheck:
     outputs:
       - lib
     options:
       internal: true
-  typecheck-cjs:
-    command: 'tsc -p tsconfig.cjs.json'
-    outputs:
-      - lib
-    options:
-      internal: true
   build:
-    command: './fixup.sh'
+    command: 'bun run build'
     deps:
-      # - remove-build-files
       - typecheck
-      - typecheck-cjs

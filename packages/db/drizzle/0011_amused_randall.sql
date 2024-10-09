@@ -1,0 +1,2 @@
+ALTER TABLE "auth"."subscriptions" ALTER COLUMN "provider_subscription_id" SET DATA TYPE text;--> statement-breakpoint
+ALTER TABLE "auth"."subscriptions" ALTER COLUMN "provider_subscription_id" DROP NOT NULL;

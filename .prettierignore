@@ -3,9 +3,8 @@ node_modules/
 *.map
 *.snap
 *.env*
-*eslintrc.*
 .gitignore
 *.sh
 lib/
 dist/
-packages/data-access/src/migrations/meta
+*.expo/

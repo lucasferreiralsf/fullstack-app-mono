@@ -1,0 +1,6 @@
+export enum PlanSku {
+	SILVER = 'PLN-SILVER',
+	GOLD = 'PLN-GOLD',
+	SAPPHIRE = 'PLN-SAPPHIRE',
+	DIAMOND = 'PLN-DIAMOND',
+}

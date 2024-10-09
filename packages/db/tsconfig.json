@@ -1,0 +1,15 @@
+{
+	"extends": "../../tsconfig.options.json",
+	"compilerOptions": {
+		"rootDir": "./src",
+		"emitDeclarationOnly": false,
+		"outDir": "dist"
+	},
+	"exclude": ["drizzle.config.ts", "dist/**/*", "lib/**/*"],
+	"references": [
+		{
+			"path": "../utils"
+		}
+	],
+	"include": ["src/**/*", "src/schema"]
+}

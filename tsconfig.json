@@ -3,7 +3,10 @@
 	"files": [],
 	"references": [
 		{
-			"path": "packages/data-access"
+			"path": "apps/mobile/gymclub-mobileapp"
+		},
+		{
+			"path": "packages/db"
 		},
 		{
 			"path": "packages/utils"

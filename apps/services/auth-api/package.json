@@ -1,0 +1,23 @@
+{
+	"name": "@gymclub-services/auth-api",
+	"version": "1.0.50",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "bun run --watch src/index.ts"
+	},
+	"dependencies": {
+		"@gymclub/db": "workspace:*",
+		"@gymclub/utils": "workspace:*",
+		"@lucia-auth/adapter-drizzle": "^1.0.7",
+		"elysia": "^1.0.23",
+		"lucia": "^3.2.0",
+		"oslo": "^1.2.0",
+		"stripe": "^16.11.0"
+	},
+	"module": "src/index.js",
+	"type": "module",
+	"devDependencies": {},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
+}

@@ -12,11 +12,11 @@ node:
 
   # The package manager to use when managing dependencies.
   # Accepts "npm" (default), "pnpm", "yarn", or "bun".
-  packageManager: 'pnpm'
+  packageManager: 'bun'
 
   # The version of the package manager (above) to use.
-  pnpm:
-    version: '9.1.1'
+  # pnpm:
+  #   version: '9.2.0'
 
   # Add `node.version` as a constraint in the root `package.json` `engines`.
   addEnginesConstraint: true
@@ -46,16 +46,16 @@ typescript:
   rootConfigFileName: 'tsconfig.json'
   routeOutDirToCache: true
   syncProjectReferences: true
-  # includeProjectReferenceSources: true
-  # syncProjectReferencesToPaths: true
+  includeProjectReferenceSources: false
+  syncProjectReferencesToPaths: true
 
 # Configures Bun within the toolchain.
 bun:
   # The version to use. Must be a semantic version that includes major, minor, and patch.
-  version: '1.1.8'
+  # version: '1.1.8'
 
   # Version format to use when syncing dependencies within the project's `package.json`.
-  # dependencyVersionFormat: 'workspace'
+  dependencyVersionFormat: 'workspace'
 
   # Support the "one version policy" by only declaring dependencies in the root `package.json`.
   # rootPackageOnly: true

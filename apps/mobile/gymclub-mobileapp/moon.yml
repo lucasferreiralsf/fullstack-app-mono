@@ -1,0 +1,77 @@
+id: gymclub-mobileapp
+type: application
+language: typescript
+stack: frontend
+platform: bun
+tags:
+  - gymclub-mobile
+
+toolchain:
+  typescript:
+    includeProjectReferenceSources: false
+    syncProjectReferencesToPaths: false
+    syncProjectReferences: false
+
+project:
+  name: 'gymclub/mobile'
+  description: 'Gymclub Mobile App'
+  channel: '#mobile-app'
+
+tasks:
+  install:
+    command: bun install
+
+  format:
+    command: bun run format
+    inputs:
+      - 'src/**/*.{ts,tsx}'
+
+  build:
+    command: bun run prebuild
+    inputs:
+      - 'src/**/*.{ts,tsx}'
+    outputs:
+      - 'android'
+      - 'ios'
+
+  dev:
+    command: bun run start
+    local: true
+
+  dev-android:
+    command: bun run dev:android
+    local: true
+
+  dev-ios:
+    command: bun run dev:ios
+    local: true
+
+  dev-build-ios:
+    command: bun run dev-build:ios
+    local: true
+
+  dev-build-android:
+    command: bun run dev-build:android
+    local: true
+
+  test:
+    command: bun run test
+    inputs:
+      - 'src/**/*.{ts,tsx}'
+
+  test-unit:
+    command: bun run test:unit
+    inputs:
+      - 'src/**/*.{ts,tsx}'
+    outputs:
+      - 'unit-test-results.json'
+
+  test-integration:
+    command: bun run test:integration
+    inputs:
+      - 'src/**/*.{ts,tsx}'
+    outputs:
+      - 'integration-test-results.json'
+
+dependsOn:
+  - utils

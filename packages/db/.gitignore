@@ -1,0 +1,7 @@
+.env
+src/*.to-schema.json
+node_modules
+lib
+dist
+dump
+.DS_Store

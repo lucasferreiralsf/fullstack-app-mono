@@ -1,0 +1,41 @@
+id: db
+type: library
+language: typescript
+stack: backend
+platform: node
+
+toolchain:
+  typescript:
+    includeProjectReferenceSources: false
+    syncProjectReferencesToPaths: false
+    syncProjectReferences: true
+    routeOutDirToCache: false
+
+project:
+  name: 'db'
+  description: 'Package designed to access and manage our database'
+  channel: '#db'
+
+tasks:
+  db-start:
+    command: docker compose up
+    local: true
+  db-delete:
+    command: bun run delete
+  db-restart:
+    command: bun run restart
+  db-build:
+    command: bun run build
+  db-migrate:
+    command: bun run migrate
+  db-seed:
+    command: bun run seed
+  open-studio:
+    command: dotenvx run -- drizzle-kit studio
+    args:
+      - '--port=5455'
+      - --config=./drizzle.config.ts
+    local: true
+
+dependsOn:
+  - utils

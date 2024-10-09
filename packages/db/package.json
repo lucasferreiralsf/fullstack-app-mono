@@ -1,0 +1,29 @@
+{
+	"name": "@gymclub/db",
+	"module": "index.ts",
+	"type": "module",
+	"main": "index.ts",
+	"exports": {
+		".": {
+			"import": "./index.ts"
+		}
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@faker-js/faker": "^9.0.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@gymclub/utils": "workspace:*"
+	},
+	"scripts": {
+		"start": "docker compose up",
+		"delete": "docker compose rm -s -f -v",
+		"restart": "bun run delete && bun run start -d && sleep 10 && bun run build && bun run migrate",
+		"build": "bunx drizzle-kit generate",
+		"migrate": "bunx tsx src/migrate.ts",
+		"seed": "bun run ./src/seed.ts"
+	}
+}

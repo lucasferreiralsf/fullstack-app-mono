@@ -1,11 +1,11 @@
 {
-	"extends": "../../tsconfig.options.json",
-	"references": [],
 	"compilerOptions": {
 		"rootDir": "./src",
-		"emitDeclarationOnly": true,
-		"outDir": "lib/mjs"
+		"emitDeclarationOnly": false,
+		"outDir": "dist",
+		"composite": true,
+		"skipLibCheck": true
 	},
-	"include": ["src/**/*", "../../tsconfig.eslint.json"],
-	"exclude": ["dist", "lib"]
+	"exclude": ["dist/**/*", "../../node_modules"],
+	"include": ["src/**/*"]
 }

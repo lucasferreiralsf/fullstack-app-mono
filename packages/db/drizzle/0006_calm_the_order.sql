@@ -1,0 +1,1 @@
+ALTER TABLE "auth"."plan" DROP CONSTRAINT "plan_sku_unique";

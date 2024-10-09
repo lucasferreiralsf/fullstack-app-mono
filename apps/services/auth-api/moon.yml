@@ -1,0 +1,36 @@
+id: auth-api
+type: application
+language: typescript
+stack: backend
+platform: bun
+tags:
+  - gymclub-services
+
+toolchain:
+  typescript:
+    includeProjectReferenceSources: false
+    syncProjectReferencesToPaths: false
+    syncProjectReferences: false
+
+project:
+  name: 'gymclub-services/auth'
+  description: 'Auth api'
+  channel: '#auth-api'
+
+tasks:
+  install:
+    command: bun install
+
+  dev:
+    command: bun
+    args:
+      # - '--debug=0.0.0.0:9229'
+      - '--watch'
+      - 'src/index.ts'
+    local: true
+  test:
+    command: bun test
+
+dependsOn:
+  - utils
+  - db

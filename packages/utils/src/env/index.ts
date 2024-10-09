@@ -1,5 +1,7 @@
-import 'dotenv/config';
+import { config } from '@dotenvx/dotenvx';
 import { z } from 'zod';
+
+config();
 
 export function generateEnv<T extends z.AnyZodObject>(
 	schema: T,

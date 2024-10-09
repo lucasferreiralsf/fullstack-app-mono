@@ -1,0 +1,1 @@
+ALTER TABLE "auth"."user" DROP COLUMN IF EXISTS "cas";

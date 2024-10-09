@@ -5,5 +5,35 @@
 	"tabWidth": 2,
 	"trailingComma": "all",
 	"useTabs": true,
-	"endOfLine": "auto"
+	"plugins": ["@ianvs/prettier-plugin-sort-imports"],
+	"endOfLine": "auto",
+	"overrides": [
+		{
+			"files": "apps/mobile/gymclub-mobileapp/src/**/*",
+			"options": {
+				"importOrder": [
+					"<TYPES>",
+					"<TYPES>^[.]",
+					"<BUILTIN_MODULES>",
+					"<THIRD_PARTY_MODULES>",
+					"",
+					"^@/app/(.*)$",
+					"",
+					"^@/data/(.*)$",
+					"",
+					"^@/domain/(.*)$",
+					"",
+					"^@/main/(.*)$",
+					"",
+					"^@/infra/(.*)$",
+					"",
+					"^@/presentation/(.*)$",
+					"",
+					"^[./]"
+				],
+				"importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+				"importOrderTypeScriptVersion": "5.0.0"
+			}
+		}
+	]
 }

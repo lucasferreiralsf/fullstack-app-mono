@@ -1,0 +1,1 @@
+ALTER TABLE "auth"."athlete_profile" ADD COLUMN "provider_customer_id" text;

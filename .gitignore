@@ -8,3 +8,6 @@ lib/
 dist/
 # Build cache manifests
 *.tsbuildinfo
+package-lock.json
+todo
+.DS_Store
